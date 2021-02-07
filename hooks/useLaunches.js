@@ -6,6 +6,7 @@ export function useLaunches(){
     const query = gql`
         query {
             launchesPast(limit: 100) {
+                id
                 launch_date_local
                 rocket {
                     second_stage {

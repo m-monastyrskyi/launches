@@ -1,6 +1,7 @@
-import { useLaunches } from '../hooks/useLaunches';
+import { useLaunches } from '../../hooks/useLaunches';
+import LaunchesGraph from './LaunchesGraph';
 
-const GraphContainer = () => {
+const LaunchesGraphContainer = () => {
     const { data, error, isFetching } = useLaunches();
 
     if ( isFetching ) {
@@ -14,11 +15,7 @@ const GraphContainer = () => {
         </>;
     }
 
-    return (
-        <code>
-            {JSON.stringify(data)}
-        </code>
-    );
+    return <LaunchesGraph data={data}/>;
 };
 
-export default GraphContainer;
+export default LaunchesGraphContainer;
