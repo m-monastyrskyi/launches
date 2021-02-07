@@ -1,13 +1,13 @@
-import Head from 'next/head';
+import GraphContainer from '../components/GraphContainer';
+import React from 'react';
 
-export default function Home(){
+const Home = () => {
     return (
         <>
-            <Head>
-                <title>SpaceX launches visualisation</title>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
-            <h1>Hello, SpaceX</h1>
+            <h1>Welcome to SpaceX launches 🚀</h1>
+            <GraphContainer/>
         </>
     );
-}
+};
+
+export default Home;
