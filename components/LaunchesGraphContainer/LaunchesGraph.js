@@ -3,7 +3,7 @@ import {
 } from 'recharts';
 import { normalizeData } from '../../utils/utils';
 
-const LaunchesGraph = ({ data }) => {
+const LaunchesGraph = ({ data, units }) => {
     const normalizedData = normalizeData(data);
 
     return (
@@ -22,7 +22,7 @@ const LaunchesGraph = ({ data }) => {
                     <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '40px' }}/>
                     <ReferenceLine y={0} stroke="#000"/>
                     <Brush dataKey="name" travellerWidth={10} height={30} stroke="#07C3C4" y={460}/>
-                    <Bar dataKey="payloadMass" name="Payload mass (kg)" fill="#008C8D"/>
+                    <Bar dataKey="payloadMass" name={`Payload mass (${units})`} fill="#008C8D"/>
                 </BarChart>
             </ResponsiveContainer>
         </div>

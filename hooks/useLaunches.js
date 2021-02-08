@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import { gql, request } from 'graphql-request';
 
-export function useLaunches(){
+export function useLaunches(units){
     const url = 'https://api.spacex.land/graphql/';
     const query = gql`
         query {
@@ -11,7 +11,7 @@ export function useLaunches(){
                 rocket {
                     second_stage {
                         payloads {
-                            payload_mass_kg
+                            payload_mass_${units}
                         }
                     }
                 }

@@ -1,8 +1,15 @@
+import { useEffect } from 'react';
 import { useLaunches } from '../../hooks/useLaunches';
 import LaunchesGraph from './LaunchesGraph';
+import { useQueryClient } from 'react-query';
 
-const LaunchesGraphContainer = () => {
-    const { data, error, isFetching } = useLaunches();
+const LaunchesGraphContainer = ({ units = 'kg' }) => {
+    const queryClient = useQueryClient();
+    const { data, error, isFetching } = useLaunches(units);
+
+    useEffect(() => {
+        queryClient.fetchQuery('launches');
+    }, [units]);
 
     if ( isFetching ) {
         return <h1>Loading...</h1>;
@@ -15,7 +22,7 @@ const LaunchesGraphContainer = () => {
         </>;
     }
 
-    return <LaunchesGraph data={data}/>;
+    return <LaunchesGraph data={data} units={units}/>;
 };
 
 export default LaunchesGraphContainer;
