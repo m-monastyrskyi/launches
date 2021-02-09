@@ -1,0 +1,18 @@
+.toggle {
+    margin: 1.5rem;
+    padding: .5rem 1rem;
+    outline: none;
+    cursor: pointer;
+    background-color: #07C3C4;
+    transition: .5s;
+    font-size: clamp(.7rem, -0.75rem + 6vw, 1.3rem);
+    border-radius: 5px;
+    border: 2px solid #07C3C4;
+    color: white;
+}
+
+.toggle:hover {
+    color: #07C3C4;
+    background: none;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}

@@ -1,6 +1,8 @@
+import styles from '../../styles/Button.module.css'
+
 const Button = ({ children, ...restProps }) => {
     return (
-        <button className={'pure-button pure-button-primary'} {...restProps}>
+        <button className={styles.toggle} {...restProps}>
             {children}
         </button>
     );
